@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div id="container">
+    <div id="signin">
+        <form >
+           
+            
+            <input type="text" placeholder="Username" id="user">
+            <input type="password" placeholder="password"id="pass">
+            
+        </form>
+        <button onClick="signin()">Sign In</button>
+    </div>
+</div>
+<body>
+    
+</body>
+</html>
+<script>
+    let signin=async ()=>{
+    try{
+        let signin_data={
+           
+           username:document.getElementById("user").value,
+           password:document.getElementById("pass").value,
+            }
+        let sdata=JSON.stringify(signin_data);
+        console.log(signin_data);
+      let res = await fetch("https://masai-api-mocker.herokuapp.com/auth/login",{
+          method:"POST",
+          body:sdata,
+          headers:{
+            "Content-Type":"application/json"
+          },
+          
+      });
+         let data=await res.json();
+         getuser(signin_data.username,data.token)
+        
+    }
+    catch(error){
+        console.log("error",error)
+    }
+}
+let getuser=async (username,token)=>{
+    try{
+        let res = await fetch(`https://masai-api-mocker.herokuapp.com/user/${username}`,{
+         
+            headers:{
+            "Content-Type":"application/json",
+            Authorization:`Bearer ${token}`,
+          },
+          
+      });
+         let data=await res.json();
+         console.log(data)
+    }catch(error){
+        console.log(error);
+    }
+};
+</script>

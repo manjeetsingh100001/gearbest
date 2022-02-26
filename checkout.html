@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/checkout.css">
+    <style> 
+  
+     </style>
+</head>
+<body>
+    <div id="navbar">
+
+    </div>
+    <div id="check">
+    <h1>CHECKOUT</h1>
+  
+    <h4>1.Addresses</h4>
+    <form id="input">
+        <input id="firstName" type="text" placeholder="First name">
+        <input id="lastName" type="text"placeholder="Last name">
+        <input id="pin" type="number"placeholder="Post code">
+        <input id="Address1"  type="text"placeholder="Address1">
+        <input id="Address2" type="text"placeholder="Address2">
+        <input id="city" type="text"placeholder="city">
+        <input id="state" type="text"placeholder="State">
+        <input id="country" type="text"placeholder="Country" >
+         </form>
+    <button id="sub">place order</button>
+    </div>
+    <div id="footer">
+
+    </div>
+</body>
+</html>
+ <script type="module">
+     import navbar from "./components/navbar.js"
+  let nav=document.getElementById("navbar");
+  nav.innerHTML=navbar();
+  import footer from "./components/footer.js"
+  let foot=document.getElementById("footer");
+  foot.innerHTML=footer();
+document.getElementById("sub").addEventListener("click", function(){
+    
+    window.location.href="orderplaced.html"
+})
+</script>
