@@ -4,63 +4,95 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <link rel="stylesheet" href="./style/index.css"> -->
+
+    <style>
+#container{ 
+    display: grid; width: 1190px;margin: auto;border: 1px solid transparent; grid-template-columns: repeat(5, 1fr); grid-gap: 16px; margin-top:50px;
+     }
+     body{ margin:0;font-family: OpenSans,Arial,Helvetica,sans-serif;}
+  img{width:200px;height:240px}
+  #card{ width:210px;height: 340px; border:1px solid transparent;}
+  #line1{display: flex; flex-flow: row-reverse;width: 1190px;border: 1px solid transparent;margin: auto;}
+  #line1 p{font-family: OpenSans,Arial,Helvetica,sans-serif;background-color: transparent;color: #666;line-height: 24px;font-size: 13px;margin:0px 16px 0px 16px;}
+  #line2 p{font-family: OpenSans,Arial,Helvetica,sans-serif;background-color: transparent;color: #666;font-size: 14px;font-weight: 600; line-height: 25px; margin:15px 10px 0px 54px;}
+  #it{height: 32px;border: 2px solid rgb(255,218,0);width: 480px;border-radius: 100px;margin-top: 14px;margin-left: 120px;}
+  #line2{display:flex;width: 1190px;margin: auto;border:1px solid transparent}
+  #line2 img{width: 230px;height: 50px;}
+  #stline{display:flex;width:1190px;height:40px; border: 1px solid transparent;background-color:rgb(255,218,0);margin: auto;}
+  #stline p{text-align: center; font-size: 16px;}
+ #stdiv{ width: 230px;color:white;background-color: black;}
+ .st{width: 230px;color:black;background-color:rgb(255,218,0);font-weight:600;}
+  #caro{display:flex;width: 1190px;margin: auto;}
+  #left{font-size: 14px;width: 230px;background-color: #eee;}
+  #right{width: 960px; border: 1px solid transparent;}
+  #imgid{width: 100%;height: 100%;}
+  #belcaro{display:flex;height: 120px;width: 1190px;margin: auto;}
+  #belcaro img{width: 230px;height: 100%;margin-right: 10px;}
+  #prod{width: 210px;height: 210px;}
+  #div2id{height: 40px;overflow: hidden;font-size: 14px;line-height: 20px;}
+  #div3id{font-size: 20px; color: #f30240;margin-top: 5px;}
+  #recom{width: 1190px; font-size: 20px; color: #000;margin: auto;font-weight: 700;padding-left: 3rem;margin-top:50px ;}
+  #navinfo{width: 1190px;margin: auto;display: flex;}
+  #navinfo p{font-size: 12px;}
+  #navinfo div{margin: 32px 120px 30px 16px;}
+  #navout{background-color: #eee;margin-top: 150px;padding-top: 70px ;}
+  #navbrand{height: 60px;width: 1190px;margin: auto; display: flex; cursor:pointer}
+  #navbrand img{width: 230px;height: 60px;}
+  #order{ width: 1190px; margin: auto;padding-left: 200px; padding-top: 150px;}
+  #logo{cursor:pointer}
+  #sign{cursor: pointer;}
+  #icart{cursor: pointer;}
+  #scontainer{display :flex; width:1190px; margin: auto;padding-top: 50px;}
+  #register{flex:3}
+  #register h3{text-align:center ;}
+  #register input{padding: 10px 50px;margin-left: 3rem;margin-bottom: 0.5rem;}
+  #register button{padding: 5px 105px;margin-left: 3rem;background-color:rgb(255,218,0) ;border: 1px solid rgb(255,218,0) ;}
+  #signin{flex:7}
+  #signin h3{text-align:center ;}
+  #signin input{ padding: 10px 150px ;display: block;margin-left: 12rem;}
+  #signin button{padding: 5px 215px;margin-left: 12rem;background-color:rgb(255,218,0) ;border: 1px solid rgb(255,218,0) ;}
+  #signin h4{margin-left: 13rem;}
+    </style>
 </head>
-<div id="container">
+<body>
+<div id="navbar">
+
+</div>
+<div id="scontainer">
+    <div id="register">
+        <h3>Sign up</h3>
+        <form >
+            <input type="text" placeholder="Name"id="name">
+            <input type="email"placeholder="Email"id="email">
+            <input type="text" placeholder="Username" id="user">
+            <input type="password" placeholder="Password"id="pass">
+            <input type="number" placeholder="Mobile"id="mob">
+            <!-- <input type="text" placeholder="description"id="des"> -->
+        </form>
+        <button id="regbttn">Register</button>
+    </div>
+
+
     <div id="signin">
+        <h3>Sign In</h3>
         <form >
            
             
-            <input type="text" placeholder="Username" id="user">
-            <input type="password" placeholder="password"id="pass">
+            <input type="text" placeholder="Username" id="suser">
+            <input type="password" placeholder="Password"id="spass">
             
         </form>
-        <button onClick="signin()">Sign In</button>
+        <button id="signbttn">Sign In</button>
+        <h4>New User ?Sign up First</h4>
     </div>
 </div>
-<body>
-    
+
+    <div id="footer">
+
+    </div> 
 </body>
 </html>
-<script>
-    let signin=async ()=>{
-    try{
-        let signin_data={
-           
-           username:document.getElementById("user").value,
-           password:document.getElementById("pass").value,
-            }
-        let sdata=JSON.stringify(signin_data);
-        console.log(signin_data);
-      let res = await fetch("https://masai-api-mocker.herokuapp.com/auth/login",{
-          method:"POST",
-          body:sdata,
-          headers:{
-            "Content-Type":"application/json"
-          },
-          
-      });
-         let data=await res.json();
-         getuser(signin_data.username,data.token)
-        
-    }
-    catch(error){
-        console.log("error",error)
-    }
-}
-let getuser=async (username,token)=>{
-    try{
-        let res = await fetch(`https://masai-api-mocker.herokuapp.com/user/${username}`,{
-         
-            headers:{
-            "Content-Type":"application/json",
-            Authorization:`Bearer ${token}`,
-          },
-          
-      });
-         let data=await res.json();
-         console.log(data)
-    }catch(error){
-        console.log(error);
-    }
-};
+<script type="module" src="./components/signin.js">
+  
 </script>

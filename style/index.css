@@ -28,6 +28,9 @@
   #navinfo p{font-size: 12px;}
   #navinfo div{margin: 32px 120px 30px 16px;}
   #navout{background-color: #eee;margin-top: 150px;padding-top: 70px ;}
-  #navbrand{height: 60px;width: 1190px;margin: auto; display: flex; }
+  #navbrand{height: 60px;width: 1190px;margin: auto; display: flex; cursor:pointer}
   #navbrand img{width: 230px;height: 60px;}
   #order{ width: 1190px; margin: auto;padding-left: 200px; padding-top: 150px;}
+  #logo{cursor:pointer}
+  #sign{cursor: pointer;}
+  #icart{cursor: pointer;}
