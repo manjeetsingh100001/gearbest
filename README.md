@@ -2,7 +2,8 @@
 Gearbest is a ecommerce website, with a simple and advanced UI with a lot of advanced functionality. We have tried to clone some of functionality of it. With HTML, CSS and JS Only.
  
  
- **Features **
+  **Features **
+  
  Sign-in/Sign-up using api
  Developed landing page
  Cart and product page
@@ -10,7 +11,7 @@ Gearbest is a ecommerce website, with a simple and advanced UI with a lot of adv
  
  Tech Stack: HTML || CSS || JavaScript
  
- Individual project_
+ Individual project
  
                                                  Landing Page
                                                                  
