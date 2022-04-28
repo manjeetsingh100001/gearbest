@@ -4,10 +4,10 @@ Gearbest is a ecommerce website, with a simple and advanced UI with a lot of adv
  
   **Features **
   
- Sign-in/Sign-up using api
- Developed landing page
- Cart and product page
- Added sorting feature based on price
+- Sign-in/Sign-up using api
+- Developed landing page
+ -Cart and product page
+ -Added sorting feature based on price
  
  Tech Stack: HTML || CSS || JavaScript
  
